@@ -89,5 +89,27 @@ def base_converter():
         4: "hexadecimal"
     }
 
+   if current_base == 1:
+        converted = binary_converter(number)
+    elif current_base == 2:
+        converted = octal_converter(number)
+    elif current_base == 3:
+        converted = decimal_converter(number)
+    elif current_base == 4:
+        converted = hexadecimal_converter(number)
+    else:
+        print("Invalid current base selection!")
+        return
+
+    target_base_name = conversions.get(target_base)
+
+    if target_base_name and target_base_name in converted:
+        result = converted[target_base_name]
+    else:
+        print("Invalid target base selection or conversion not possible!")
+        return
+
+    print(f"The number in {target_base_name} base is: {result}")
+
   
 base_converter()
