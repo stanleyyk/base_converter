@@ -9,6 +9,22 @@ def base_converter():
         elif base == 4:
             return all(char in '0123456789abcdefABCDEF' for char in number)
         return False
+      
+    def binary_converter(binary_num):
+        decimal_num = int(binary_num, 2)
+        return {
+            "octal": oct(decimal_num)[2:],
+            "decimal": decimal_num,
+            "hexadecimal": hex(decimal_num)[2:]
+        }
+
+    def octal_converter(octal_num):
+        decimal_num = int(octal_num, 8)
+        return {
+            "binary": bin(decimal_num)[2:],
+            "decimal": decimal_num,
+            "hexadecimal": hex(decimal_num)[2:]
+        }
        
    print("Welcome to the Base Converter")
    number = input("Enter the number: ")
