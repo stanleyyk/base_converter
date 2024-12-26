@@ -26,6 +26,22 @@ def base_converter():
             "hexadecimal": hex(decimal_num)[2:]
         }
        
+    def decimal_converter(decimal_num):
+        decimal_num = int(decimal_num)
+        return {
+            "binary": bin(decimal_num)[2:],
+            "octal": oct(decimal_num)[2:],
+            "hexadecimal": hex(decimal_num)[2:]
+        }
+
+    def hexadecimal_converter(hex_num):
+        decimal_num = int(hex_num, 16)
+        return {
+            "binary": bin(decimal_num)[2:],
+            "octal": oct(decimal_num)[2:],
+            "decimal": decimal_num
+        }
+       
    print("Welcome to the Base Converter")
    number = input("Enter the number: ")
    print("Select the current base of the number:")
